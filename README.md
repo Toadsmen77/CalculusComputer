@@ -1,2 +1,2 @@
-# Derivative-Calculator
-Contains all files for Juda's derivative calculator
+# Derivative Calculator
+Web-based program which computes nth order derivatives for single variable and multivariable mathematical functions
