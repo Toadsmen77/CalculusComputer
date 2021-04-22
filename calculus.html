@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculus-styles.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Calculus Webpage</title>
+  </head>
+
+  <body>
+
+    <section id="derivative-pics">
+      <img id="singlevar-derivative-pic" src="images/derivative-image.png"
+      alt="general limit definition of a derivative"/>
+      <img id="multivar-derivative-pic" src = "images/partial-derivative-image.gif"
+      alt="general limit definition of a partial derivative"/>
+    </section>
+
+    <section>
+      <h1> Welcome to derivative calculator! </h1>
+      <hr/>
+      <h3> Compute the derivative of... </h3>
+
+      <form name = "inputForm">
+        <input type="text" placeHolder="x^2 + sin(x) + ln(y)" id = "expression"/>
+        <input type="button" value="Compute derivative!" onClick = "computeDerivative()"/>
+      </form>
+    </section>
+
+    <img id="newton-pic" src = "images/isaac-newton-lit.jpg"
+    alt="Pic of the inventor of calculus, Isaac Newton"/>
+
+    <section id="log"></section>
+      <header>Log:</header>
+      <p id="derivatives">x + y</p>
+
+    </section>
+
+
+  </body>
+
+
+
+</html>

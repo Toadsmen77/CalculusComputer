@@ -1,0 +1,36 @@
+section, header {
+  background-color: darkred;
+}
+
+img {
+  border-radius: 10px;
+}
+
+hr {
+  width: 1000px;
+}
+
+#log {
+  background-color: transparent;
+}
+
+#derivatives {
+  background-color: darkred;
+  padding-bottom: 320px;
+  border-radius: 10px;
+}
+
+#derivative-pics {
+  display: inline;
+  padding-top: 125px;
+  padding-right: 15px;
+}
+
+#singlevar-derivative-pic, #multivar-derivative-pic {
+  height: 20vh;
+}
+
+#newton-pic {
+  float: left;
+  margin-right: 10px;
+}
