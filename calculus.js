@@ -23,10 +23,8 @@
    * actual computer functions
    */
   function init() {
-
     let differentiateButton = id("differentiate-button");
     differentiateButton.addEventListener("click", computeExpression);
-
   }
 
   /**
@@ -41,10 +39,7 @@
 
     let infixExpression = id("expression").value;
     let postFixExpression = infixToPostfix(infixExpression);
-
     let expressionAsTree = new ExpressionTree();
-
-
 
     /**
      * Implements Dijkstra's Shunting-yard algorithm
@@ -77,31 +72,24 @@
       ]);
 
       for (let i = 0; i < expression.length; i++) {
-
         let curr = expression.charAt(i);
-
         if (isNum(curr)) {
-
           let num = curr;
           i++;
-
+          
           while (i < expression.length && !isOperator(expression.charAt(i))) {
-
             curr = expression.charAt(i);
             if (curr != ' ') {
               num += curr;
             }
             i++;
-
           }
-
+          
           outputQueue.push(num);
           if (i != expression.length) {
             i--;
           }
-
         } else if (isOperator(curr)) {
-
           if (operatorStack.length == 0 || curr == '(') {
             operatorStack.push(curr);
           } else if (curr == ')') {
@@ -111,37 +99,27 @@
               outputQueue.push(operator);
               operator = operatorStack.pop();
             }
-
           } else {
-
             //while element on top of stack has greater or equal precedence than curr
             while (operatorStack.length > 0 &&
             operatorPrecedences.get(operatorStack[operatorStack.length - 1]) >= operatorPrecedences.get(curr)) {
-
               let operator = operatorStack.pop();
               outputQueue.push(operator);
-
             }
-
             operatorStack.push(curr);
-
           }
-
         } else if (curr == ' ') {
           continue;
         } else {
           alert("Expression is invalid");
           break;
         }
-
       }
 
       while (operatorStack.length > 0) {
         outputQueue.push(operatorStack.pop());
       }
-
       return outputQueue;
-
     }
 
     /**
@@ -153,26 +131,18 @@
     function evaluatePostFixExpression(expression) {
 
       let stackOfNumbers = [];
-
       for (let i = 0; i < expression.length; i++) {
-
         let curr = expression[i];
-
         if (isNum(curr)) {
-
           stackOfNumbers.push(curr.charCodeAt() - 48);
         } else if (isOperator(curr)) {
-
           if (stackOfNumbers.length < 2) {
             alert("Expression is invalid");
             break;
           } else {
-
             let num2Int = stackOfNumbers.pop();
             let num1Int = stackOfNumbers.pop();
-
             let result = 0;
-
             if (curr == '+') {
               result = num1Int + num2Int;
             } else if (curr == '-') {
@@ -182,15 +152,10 @@
             } else if (curr == '/') {
               result = num1Int / num2Int;
             }
-
             stackOfNumbers.push(result);
-
           }
-
         }
-
       }
-
       return stackOfNumbers.pop();
 
     }
