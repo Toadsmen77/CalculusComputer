@@ -1,8 +1,14 @@
 class ExpressionTree {
 
-  head = new treeNode();
+  #tree;
+  #head = new treeNode();
   constructor(expression) {
 
   }
 
+
 }
+
+
+
+
