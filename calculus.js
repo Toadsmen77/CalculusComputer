@@ -15,6 +15,7 @@
    * actual computer functions
    */
   function init() {
+
     let differentiateButton = id("differentiate-button");
     differentiateButton.addEventListener("click", computeExpression);
   }
@@ -28,13 +29,22 @@
    * which do that
    */
   function computeExpression() {
-    alert("hi");
 
     let infixExpression = id("expression").value;
     let postFixExpression = new PostFixExpression(infixExpression);
-    alert(postFixExpression.getFunctionAsArray());
+
+    let expressionTree = new ExpressionTree(postFixExpression);
+    console.log(expressionTree.printTree());
 
 
+  }
+
+  function id(elementID) {
+    return document.getElementById(elementID);
+  }
+
+  function qs(selector) {
+    return document.querySelector(selector);
   }
 
 })();

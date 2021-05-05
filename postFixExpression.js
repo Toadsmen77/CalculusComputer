@@ -37,10 +37,10 @@ class PostFixExpression {
 
     for (let i = 0; i < expression.length; i++) {
       let curr = expression.charAt(i);
-      if (isNum(curr)) {
+      if (this.isNum(curr)) {
         let num = curr;
         i++;
-        while (i < expression.length && !isOperator(expression.charAt(i))) {
+        while (i < expression.length && !this.isOperator(expression.charAt(i))) {
           curr = expression.charAt(i);
           if (curr != ' ') {
             num += curr;
@@ -52,7 +52,7 @@ class PostFixExpression {
         if (i != expression.length) {
           i--;
         }
-      } else if (isOperator(curr)) {
+      } else if (this.isOperator(curr)) {
         if (operatorStack.length == 0 || curr == '(') {
           operatorStack.push(curr);
         } else if (curr == ')') {
@@ -96,9 +96,9 @@ class PostFixExpression {
     let stackOfNumbers = [];
     for (let i = 0; i < expression.length; i++) {
       let curr = expression[i];
-      if (isNum(curr)) {
+      if (this.isNum(curr)) {
         stackOfNumbers.push(curr.charCodeAt() - 48);
-      } else if (isOperator(curr)) {
+      } else if (this.isOperator(curr)) {
         if (stackOfNumbers.length < 2) {
           alert("Expression is invalid");
           break;
