@@ -8,7 +8,7 @@ class ExpressionTree {
    * the post fix expression
    */
   constructor(postFixExpression) {
-    this.constructExpressionTree(postFixExpression);
+    this.constructExpressionTree(postFixExpression.getFunctionAsArray());
   }
 
   /**
@@ -22,6 +22,7 @@ class ExpressionTree {
   constructExpressionTree(expression) {
 
     let stack = [];
+
     for (let i = 0; i < expression.length; i++) {
       let symbol = expression[i];
       let symbolNode = new TreeNode(symbol);
@@ -51,6 +52,18 @@ class ExpressionTree {
     } catch(error) {
       alert("Expression is invalid");
     }
+  }
+
+  /**
+   * traverse through the tree and apply the differentiation rules
+   * @returns {String} - return a String representing the
+   * differentiated function
+   */
+  differentiateTree() {
+
+
+
+
   }
 
   /**

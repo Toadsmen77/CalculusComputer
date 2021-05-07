@@ -34,7 +34,10 @@
     let postFixExpression = new PostFixExpression(infixExpression);
 
     let expressionTree = new ExpressionTree(postFixExpression);
-    console.log(expressionTree.printTree());
+    let derivative = expressionTree.differentiateTree();
+
+
+
 
 
   }

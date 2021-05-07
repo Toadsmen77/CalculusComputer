@@ -8,25 +8,30 @@ class PostFixExpression {
   }
 
   /**
-     * Implements Dijkstra's Shunting-yard algorithm
-     * for converting mathematical expressions
-     * from infix notation(standard notation) to postfix notation.
-     * We want to convert the expression into postfix notation
-     * because it makes it easy to compute the expression
-     *
-     * @param {String} expression - String which represents the
-     * mathematical expression input from the user
-     * ex: 3 + (6 / 2) * 2
-     *
-     * @returns {Array}- returns an array postfix version
-     * of the origin infix expression parameter
-     */
+   * Implements Dijkstra's Shunting-yard algorithm
+   * for converting mathematical expressions
+   * from infix notation(standard notation) to postfix notation.
+   * We want to convert the expression into postfix notation
+   * because it makes it easy to compute the expression
+   *
+   * @param {String} expression - String which represents the
+   * mathematical expression input from the user
+   * ex: 3 + (6 / 2) * 2
+   *
+   * @returns {Array}- returns an array postfix version
+   * of the origin infix expression parameter
+   */
    infixToPostfix(expression) {
 
     let outputQueue = [];
     let operatorStack = [];
 
-    //use a hashmap to assign a precedence for each operator
+    /**
+     * transcendental functions such as trig functions, exponential,
+     * and logarithmic should be treated as operators
+     * Note that square root is represented with the "sqrt"
+     * operator
+     */
     let operatorPrecedences = new Map([
       ['*', 2],
       ['/', 2],
@@ -71,7 +76,14 @@ class PostFixExpression {
           }
           operatorStack.push(curr);
         }
-      } else if (curr == ' ') {
+      } else if (this.isLetter) { //check if letter
+        /**
+         * if the char is a letter, then we are dealing with trig, logarithmic, e^x, or sqrt
+         */
+
+
+      }
+       else if (curr == ' ') {
         continue;
       } else {
         alert("Expression is invalid");
@@ -147,6 +159,18 @@ class PostFixExpression {
     || symbol === '(' || symbol === ')';
   }
 
+  isLetter(symbol) {
+    const lowerCaseLetterASCIILowerBound = 97;
+    const lowerCaseLetterASCIIUpperBound = 122;
+    let isALowerCaseLetter = lowerCaseLetterASCIILowerBound <= symbol
+    && symbol <= lowerCaseLetterASCIIUpperBound;
+    return isALowerCaseLetter;
+  }
+
+  /**
+   * @returns {Array} - returns the array version of the
+   * post fix expression data field
+   */
   getFunctionAsArray() {
     return this.#postFixExpression;
   }
