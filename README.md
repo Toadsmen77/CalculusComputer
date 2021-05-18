@@ -20,3 +20,5 @@ the resources I used to learn how to implement a calculus computer:
   <li>https://en.wikipedia.org/wiki/Binary_expression_tree</li>
   <li>https://en.wikipedia.org/wiki/Shunting-yard_algorithm</li>
 </ul>
+
+![alt text]
