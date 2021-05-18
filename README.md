@@ -22,6 +22,6 @@ the resources I used to learn how to implement a calculus computer:
 </ul>
 
 ![alt text](https://github.com/Juda77/CalculusComputer/blob/master/images/isaac-newton-lit.jpg)
-<p>This guy invented calculus :0</p>
+<p>^This guy invented calculus :0</p>
 
-<p>Calculus is awesome!</p>
+<aside>Important note: Calculus is awesome!</aside>
