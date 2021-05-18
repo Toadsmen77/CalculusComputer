@@ -21,4 +21,4 @@ the resources I used to learn how to implement a calculus computer:
   <li>https://en.wikipedia.org/wiki/Shunting-yard_algorithm</li>
 </ul>
 
-![alt text]
+![alt text](https://github.com/Juda77/CalculusComputer/blob/master/images/isaac-newton-lit.jpg)
