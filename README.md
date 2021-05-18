@@ -19,6 +19,7 @@ the resources I used to learn how to implement a calculus computer:
   <li>https://www.reddit.com/r/learnprogramming/comments/1ijd4u/java_i_wanna_make_a_derivative_calculator_how_do/</li>
   <li>https://en.wikipedia.org/wiki/Binary_expression_tree</li>
   <li>https://en.wikipedia.org/wiki/Shunting-yard_algorithm</li>
+  <li>https://en.wikipedia.org/wiki/Risch_algorithm</li>
 </ul>
 
 ![alt text](https://github.com/Juda77/CalculusComputer/blob/master/images/isaac-newton-lit.jpg)
