@@ -22,3 +22,4 @@ the resources I used to learn how to implement a calculus computer:
 </ul>
 
 ![alt text](https://github.com/Juda77/CalculusComputer/blob/master/images/isaac-newton-lit.jpg)
+Calculus is awesome!
