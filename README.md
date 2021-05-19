@@ -7,7 +7,7 @@ online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn
 https://youtu.be/P9dpTTpjymE
 
 Computer for nth order derivatives of single variable and multivariable mathematical functions. 
-<i>♫ It's as easy as can be, just have to take dx/dt, I will derive, I will derive! ♫ </i>
+<i>♫ It's as easy as can be, just have to take dx/dt, I will derive, I will deriiiive! ♫ </i>
 <h2>Integral Calculator</h2>
 
 uuuhhhh TBD lol
