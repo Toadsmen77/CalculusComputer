@@ -1,7 +1,8 @@
 # Calculus Computer
 A web-based program which executes calculus computations. I was motivated to create this project when I was slaving away on my
 calculus homework and became curious as to how I could automate the arduous computations. There were already existing calculus computers 
-online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn how they worked. 
+online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn how they worked. The computer is comprised of two
+components, one for each major branch of calculus: derivative calculator and integral calculator(integral calculator soon to be implemented).
 
 <h2>Derivative Calculator</h2>
 https://youtu.be/P9dpTTpjymE
