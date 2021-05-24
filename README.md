@@ -16,7 +16,7 @@ John Napier in the early 1600s to execute multiplication operations. Other very 
 </p>
 <ul>
   <li>The Stepped Reckoner: a device which executed basic arithmetic calculations, invented by Gottfried Leibniz<b>(who also invented calculus!)</b></li>
-  <li>Atanasoff-Berry Computer: a device which solved systems of linear equations, invented by John Atanasoff and Clifford Berry</li>
+  <li>Atanasoff-Berry Computer: a device which solved systems of linear equations, kind of like my linear algebra computer? This machine was invented by John Atanasoff and Clifford Berry. </li>
 </ul>
 <p>
 I wanted to point out this history because I realized that I had quite a few calculator projects on my Github, and it reminded me greatly
