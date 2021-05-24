@@ -21,7 +21,7 @@ John Napier in the early 1600s to execute multiplication operations. Other very 
 </ul>
 <p>
 I wanted to point out this history because I realized that I had quite a few calculator projects on my Github, and it reminded me greatly
-of the early history of computers, and how much of its early motivation was from wanting to automating math calculations!
+of the early history of computers, and how much of its early motivation was from wanting to automate math calculations!
 </p>
 
 
