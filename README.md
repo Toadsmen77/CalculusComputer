@@ -4,6 +4,24 @@ calculus homework and became curious as to how I could automate the arduous comp
 online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn how they worked. The computer is comprised of two
 components, one for each major branch of calculus: <b>derivative calculator</b> and <b>integral calculator</b>(integral calculator not implemented yet).
 
+<h4>Fun Note</h4>
+<p>
+If you've snooped around my Github, you may have noticed that I have quite a few projects which are computers. 
+My gravitation towards programming computers is very reminiscent of the early history of computers in general.
+A lot of people claim that the very, very first computer to ever exist is the Abacus, a calculation tool which was created
+around 5000 years ago. Others would claim that the very first computer is Napier's bones, a tool created by the mathematician
+John Napier in the early 1600s to execute multiplication operations. Other very early computers included:
+</p>
+<ul>
+  <li>The Stepped Reckoner: a device which executed basic arithmetic calculations, invented by Gottfried Leibniz<b>(who also invented calculus!)</b></li>
+  <li>Atanasoff-Berry Computer: a device which solved systems of linear equations, invented by John Atanasoff and Clifford Berry</li>
+</ul>
+<p>
+I wanted to point out this history because I realized that I had quite a few calculator projects on my Github, and it reminded me greatly
+of the early history of computers, and how much of its early motivation was from wanting to automating math calculations!
+</p>
+
+
 <h2>Derivative Calculator</h2>
 https://youtu.be/P9dpTTpjymE
 
