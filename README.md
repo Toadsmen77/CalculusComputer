@@ -4,7 +4,7 @@ calculus homework and became curious as to how I could automate the arduous comp
 online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn how they worked. The computer is comprised of two
 components, one for each major branch of calculus: <b>derivative calculator</b> and <b>integral calculator</b>(integral calculator not implemented yet).
 
-<h3>Fun Note</h3>
+<h3>Fun Note, and Some History of Computers!</h3>
 <p>
 If you've snooped around my Github, you may have noticed that I have quite a few projects which are computers. 
 My gravitation towards programming computers is very reminiscent of the early history of computers in general.
