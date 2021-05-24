@@ -6,7 +6,7 @@ components, one for each major branch of calculus: <b>derivative calculator</b> 
 
 <h3>Fun Note, and Some History of Computers!</h3>
 <p>
-If you've snooped around my Github, you may have noticed that I have quite a few projects which are computers. 
+If you've snooped around my Github, you may have noticed that I have quite a few projects which are math computers. 
 My gravitation towards programming computers is very reminiscent of the early history of computers in general.
 There is some disagreement on exactly what the very first computer was, but many early computers follow the same pattern:
 they wanted to automate math computations.
