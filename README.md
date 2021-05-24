@@ -6,11 +6,11 @@ components, one for each major branch of calculus: <b>derivative calculator</b> 
 
 <h3>Fun Note, and Some History of Computers!</h3>
 <p>
-If you've snooped around my Github, you may have noticed that I have quite a few projects which are math computers. 
-My gravitation towards programming computers is very reminiscent of the early history of computers in general.
+If you've snooped around my Github, you may have noticed that I have quite a few projects which are math calculators. 
+My gravitation towards programming calculators is very reminiscent of the early history of computers in general.
 There is some disagreement on exactly what the very first computer was, but many early computers follow the same pattern:
 they wanted to automate math computations.
-A lot of people claim that the very, very first computer to ever exist is the Abacus, a calculation tool which was created
+A lot of people may claim that the very, very first computer to ever exist is the Abacus, a calculation tool which was created
 around 5000 years ago. Others would claim that the very first computer is Napier's bones, a tool created by the mathematician
 John Napier in the early 1600s to execute multiplication operations. Other very early computers included:
 </p>
