@@ -5,7 +5,7 @@ online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn
 components, one for each major branch of calculus: <b>derivative calculator</b> and <b>integral calculator</b>(integral calculator not implemented yet).
 
 <h2>Derivative Calculator</h2>
-<p><a href="https://youtu.be/P9dpTTpjymE" target="_blank">A good song</a></p>
+<p><a href="https://youtu.be/P9dpTTpjymE">A good song</a></p>
 <i>♫ This problem would be mine if I just knew that tangent line... ♫ </i>
 Computer for nth order derivatives of single variable and multivariable mathematical functions. 
 <i>♫ It's as easy as can be, just have to take dx/dt, I will derive, I will deriiiive! ♫ </i>
