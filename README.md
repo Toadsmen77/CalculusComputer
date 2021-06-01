@@ -1,5 +1,5 @@
 # Calculus Computer
-Calculus Computer is a web-based program which executes calculus computations. I was motivated to create this project when I was slaving away on my
+Calculus Computer is a front-end web-based app which executes calculus computations. I was motivated to create this project when I was slaving away on my
 calculus homework and became curious as to how I could automate the arduous computations. There were already existing calculus computers 
 online(such as Wolfram Alpha) and I was fascinated by them, so I wanted to learn how they worked. The computer is comprised of two
 components, one for each major branch of calculus: <b>derivative calculator</b> and <b>integral calculator</b>(integral calculator not implemented yet).
