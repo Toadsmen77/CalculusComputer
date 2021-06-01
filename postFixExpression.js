@@ -33,6 +33,14 @@ class PostFixExpression {
      * operator
      */
     let operatorPrecedences = new Map([
+      ["sin",4],
+      ["cos", 4],
+      ["tan", 4],
+      ["csc", 4],
+      ["sec", 4],
+      ["cot", 4],
+      ["ln", 4],
+      ["^", 3],
       ['*', 2],
       ['/', 2],
       ['+', 1],
@@ -134,6 +142,20 @@ class PostFixExpression {
       }
     }
     return stackOfNumbers.pop();
+  }
+
+  /**
+   * checks if a particular pattern matches a transcendental function
+   * @param {String} symbol - curr symbol that is guaranteed to be a letter
+   * (this function is called if the curr item is a letter, since that could
+   * mean that we're dealing with a transcendental function)
+   * @param {int} index
+   */
+  isTranscendental(symbol, index) {
+`
+`
+
+
   }
 
   /**
