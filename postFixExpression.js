@@ -3,6 +3,8 @@ class PostFixExpression {
   //private instance variable which holds the post fix expression as an array
   #postFixExpression;
 
+
+
   constructor(infixExpression) {
     this.#postFixExpression = this.infixToPostfix(infixExpression);
   }
@@ -36,9 +38,9 @@ class PostFixExpression {
       ["sin",4],
       ["cos", 4],
       ["tan", 4],
-      ["csc", 4],
-      ["sec", 4],
-      ["cot", 4],
+      ["arcsin", 4],
+      ["arccos", 4],
+      ["arctan", 4],
       ["ln", 4],
       ["^", 3],
       ['*', 2],
@@ -149,13 +151,82 @@ class PostFixExpression {
    * @param {String} symbol - curr symbol that is guaranteed to be a letter
    * (this function is called if the curr item is a letter, since that could
    * mean that we're dealing with a transcendental function)
-   * @param {int} index
+   * @param {int} index - current index we are on in the expression
+   * @param {String} expression - the math expression as a String
+   * @returns {Object} - return an object which contains 2
+   * pieces of information:
+   * -the type of transcendental function identified
+   * -the current index(the index after the last letter of the transcendental function)
+   * ***If no transcendental function was identified, just return null
+   * example return:
+   * {
+   *    transcendentalFunction: "sin",
+   *    index: 6;
+   *
+   * }
    */
-  isTranscendental(symbol, index) {
-`
-`
+  isTranscendental(symbol, index, expression) {
+
+    // hash table for transcendental functions
+    let transcendentalFunctions = {
+      sin: true,
+      cos: true,
+      tan: true,
+      arcsin: true,
+      arccos: true,
+      arctan: true,
+      log: true
+    }
+
+    let build = "";
+
+    try {
+
+      // iterate 2 spots forward and check if there's an "ln pattern"
+      for (let i = 0; i < 6; i++) {
+
+        const CHARACTERCOUNT = i;
+        if (CHARACTERCOUNT === 2 && build === "ln") {
+          let functionAndIndex = {
+            transcendentalFunction: "ln",
+            index: i
+          };
+          return functionAndIndex;
+        }
 
 
+
+
+
+        build += expression.charAt(i).toLowerCase();
+
+
+
+
+      }
+
+    } catch (error) {
+      this.handleError("isTranscendental", error);
+    }
+
+
+
+
+  }
+
+  /**
+   * Handle any errors that were caused by alerting the user
+   * about it
+   * @param {String} functionName - name of the function which the
+   * error originated from
+   * @param {Error} error - error that caused this function to get called
+   */
+  handleError(functionName, error) {
+
+    // for now, just print the error to the console,
+    // TODO: implement a way that alerts to the user
+    // that something was wrong with their input
+    console.error(functionName + " " + error);
   }
 
   /**
