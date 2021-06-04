@@ -179,13 +179,13 @@ class PostFixExpression {
     }
 
     let build = "";
-
     try {
 
       // iterate 2 spots forward and check if there's an "ln pattern"
       for (let i = 0; i < 6; i++) {
-
         const CHARACTERCOUNT = i;
+
+        // detect natural log
         if (CHARACTERCOUNT === 2 && build === "ln") {
           let functionAndIndex = {
             transcendentalFunction: "ln",
@@ -194,24 +194,33 @@ class PostFixExpression {
           return functionAndIndex;
         }
 
+        // detect standard trig and log
+        if (CHARACTERCOUNT === 3 && transcendentalFunctions[build] !== undefined) {
+          let functionAndIndex = {
+            transcendentalFunction: build,
+            index: i
+          };
+          return functionAndIndex;
+        }
 
-
-
-
+        // detect inverse trig
+        if (CHARACTERCOUNT === 6 && transcendentalFunctions[build] !== undefined) {
+          let functionAndIndex = {
+            transcendentalFunction: build,
+            index: i
+          };
+          return functionAndIndex;
+        }
         build += expression.charAt(i).toLowerCase();
-
-
-
-
       }
-
     } catch (error) {
       this.handleError("isTranscendental", error);
     }
 
-
-
-
+    // if we've reached this point, no transcendental functions were detected
+    // returning null signals the function caller that no transcendental functions
+    // were detected
+    return null;
   }
 
   /**
