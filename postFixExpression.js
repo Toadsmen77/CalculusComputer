@@ -88,7 +88,8 @@ class PostFixExpression {
         }
       } else if (this.isLetter) { //check if letter
         /**
-         * if the char is a letter, then we are dealing with trig, logarithmic, e^x, or sqrt
+         * if the char is a letter, then check if we are dealing
+         * with a transcendental function(trig, inverse trig, ln, log)
          */
 
 
@@ -114,7 +115,6 @@ class PostFixExpression {
    * @returns {int} - return the result of the expression
    */
   evaluatePostFixExpression(expression) {
-
     let stackOfNumbers = [];
     for (let i = 0; i < expression.length; i++) {
       let curr = expression[i];
@@ -128,7 +128,6 @@ class PostFixExpression {
           let num2Int = stackOfNumbers.pop();
           let num1Int = stackOfNumbers.pop();
           let result = 0;
-
           if (curr == '+') {
             result = num1Int + num2Int;
           } else if (curr == '-') {
@@ -138,7 +137,6 @@ class PostFixExpression {
           } else if (curr == '/') {
             result = num1Int / num2Int;
           }
-
           stackOfNumbers.push(result);
         }
       }
@@ -151,7 +149,7 @@ class PostFixExpression {
    * @param {String} symbol - curr symbol that is guaranteed to be a letter
    * (this function is called if the curr item is a letter, since that could
    * mean that we're dealing with a transcendental function)
-   * @param {int} index - current index we are on in the expression
+   * @param {int} startIndex - index that we initially detected a letter on in the expression
    * @param {String} expression - the math expression as a String
    * @returns {Object} - return an object which contains 2
    * pieces of information:
@@ -165,7 +163,7 @@ class PostFixExpression {
    *
    * }
    */
-  isTranscendental(symbol, index, expression) {
+  isTranscendental(startIndex, expression) {
 
     // hash table for transcendental functions
     let transcendentalFunctions = {
@@ -184,12 +182,13 @@ class PostFixExpression {
       // iterate 2 spots forward and check if there's an "ln pattern"
       for (let i = 0; i < 6; i++) {
         const CHARACTERCOUNT = i;
+        build += expression.charAt(startIndex + i).toLowerCase();
 
         // detect natural log
         if (CHARACTERCOUNT === 2 && build === "ln") {
           let functionAndIndex = {
             transcendentalFunction: "ln",
-            index: i
+            index: startIndex + i
           };
           return functionAndIndex;
         }
@@ -198,7 +197,7 @@ class PostFixExpression {
         if (CHARACTERCOUNT === 3 && transcendentalFunctions[build] !== undefined) {
           let functionAndIndex = {
             transcendentalFunction: build,
-            index: i
+            index: startIndex + i
           };
           return functionAndIndex;
         }
@@ -207,11 +206,10 @@ class PostFixExpression {
         if (CHARACTERCOUNT === 6 && transcendentalFunctions[build] !== undefined) {
           let functionAndIndex = {
             transcendentalFunction: build,
-            index: i
+            index: startIndex + i
           };
           return functionAndIndex;
         }
-        build += expression.charAt(i).toLowerCase();
       }
     } catch (error) {
       this.handleError("isTranscendental", error);
