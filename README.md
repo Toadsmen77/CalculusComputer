@@ -16,6 +16,7 @@ uuuhhhh TBD lol
 I programmed the computer myself, but I used algorithms and data structures which were already invented. Here are links to
 the resources I used to learn how to implement a calculus computer:
 <ul>
+  <li>https://www.derivative-calculator.net/</li>
   <li>https://www.reddit.com/r/learnprogramming/comments/1ijd4u/java_i_wanna_make_a_derivative_calculator_how_do/</li>
   <li>https://en.wikipedia.org/wiki/Binary_expression_tree</li>
   <li>https://en.wikipedia.org/wiki/Shunting-yard_algorithm</li>
