@@ -5,11 +5,14 @@ online(such as Wolfram Alpha) and I was really fascinated by them, so I wanted t
 
 <h2>Derivative Calculator</h2>
 <p><a href="https://youtu.be/P9dpTTpjymE">A good song</a></p>
-Computer for nth order derivatives of single variable and multivariable mathematical functions. 
+Computer for nth order derivatives of single variable mathematical functions. 
 <i>♫ It's as easy as can be, just have to take dx/dt, I will derive, I will deriiiive! ♫ </i>
-<h2>Integral Calculator</h2>
 
-uuuhhhh TBD lol
+<h2>Integral Calculator</h2>
+My integral calculator uses numerical integration(<a href="https://en.wikipedia.org/wiki/Simpson%27s_rule">Simpson's rule</a>) 
+to approximate definite integrals. I attempted to program symbolic integration for indefinite integrals, but it was too hard lol.
+In addition to using Simpson's rule, I also used <a href="https://api.mathjs.org/">mathjs</a>, a RESTful API to help me execute 
+complex computations.
 
 <h3>Credits</h3>
 I programmed the computer myself, but I used algorithms and data structures which were already invented. Here are links to
