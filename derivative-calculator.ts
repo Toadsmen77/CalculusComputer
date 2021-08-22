@@ -54,7 +54,7 @@
    * @returns DOM/HTML element specified by "elementID"
    */
   function id(elementID) {
-    return document.getElementById(elementID);
+    return <HTMLInputElement>document.getElementById(elementID);
   }
 
 })();

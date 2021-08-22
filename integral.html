@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="dist/integral-calculator.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculus-styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Integral Webpage</title>
+  </head>
+
+  <body>
+
+    <section id="integral-pics">
+      <img id="singlevar-derivative-pic" src="images/derivative-image.png"
+      alt="general limit definition of a derivative"/>
+
+    </section>
+    <main>
+
+      <section id="integral-calculator">
+        <h1> Welcome to integral calculator! </h1>
+        <hr/>
+        <h3> Compute the definite integral of... </h3>
+
+        <label for="expression">Type your function here</label>
+        <input type="text" placeholder="x^2 + sin(x) + e^x" id="expression">
+        <label for="left-bound">Left bound</label>
+        <input type="text" placeholder="0" id="left-bound">
+        <label for="right-bound">Right bound</label>
+        <input type="text" placeholder="2" id="right-bound">
+        <button id="integrate-button">Integrate!</button>
+      </section>
+
+      <img id="newton-pic" src = "images/isaac-newton-lit.jpg"
+      alt="Pic of the inventor of calculus, Isaac Newton"/>
+
+      <section id="log">
+        <header>Log:</header>
+        <p>
+          x^2 ; 0 -> 2 = 8/3
+        </p>
+      </section>
+    </main>
+
+  </body>
+
+</html>

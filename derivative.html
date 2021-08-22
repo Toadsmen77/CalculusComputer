@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="treeNode.js"></script>
+    <script src="postFixExpression.js"></script>
+    <script src="expressionTree.js"></script>
+    <script src="dist/derivative-calculator.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calculus-styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Calculus Webpage</title>
+  </head>
+
+  <body>
+
+    <section id="derivative-pics">
+      <img id="singlevar-derivative-pic" src="images/derivative-image.png"
+      alt="general limit definition of a derivative"/>
+      <img id="multivar-derivative-pic" src = "images/partial-derivative-image.gif"
+      alt="general limit definition of a partial derivative"/>
+    </section>
+    <main>
+
+      <section id="derivative-calculator">
+        <h1> Welcome to derivative calculator! </h1>
+        <hr/>
+        <h3> Compute the derivative of... </h3>
+
+        <label for="expression">Type your function here</label>
+        <input type="text" placeholder="x^2 + sin(x) + e^x" id="expression">
+        <button id="differentiate-button">Differentiate!</button>
+      </section>
+
+      <img id="newton-pic" src = "images/isaac-newton-lit.jpg"
+      alt="Pic of the inventor of calculus, Isaac Newton"/>
+
+      <section id="log">
+        <header>Log:</header>
+        <p id="derivatives">x + y</p>
+      </section>
+    </main>
+
+  </body>
+
+</html>

@@ -3,6 +3,9 @@
  * All nodes hold String data types
  */
 class TreeNode {
+  item: string;
+  left: TreeNode;
+  right: TreeNode;
   constructor(item) {
     this.item = item;
     this.left = null;
