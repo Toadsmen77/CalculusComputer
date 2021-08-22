@@ -16,8 +16,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
      * actual computer functions
      */
     function init() {
-        let integrateButton = id("integrate-button");
-        //integrateButton.addEventListener("click", computeIntegral);
+        return __awaiter(this, void 0, void 0, function* () {
+            let integrateButton = id("integrate-button");
+            let outputValue = yield computeFunction("x^2+sin(x)", 2);
+            console.log("ye: " + outputValue);
+            //integrateButton.addEventListener("click", computeIntegral);
+        });
     }
     /**
      * compute/approximate the value of the definite integral
@@ -55,10 +59,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             if (negativeIntegral) {
                 approximatedIntegral *= -1;
             }
-            console.log("final: " + approximatedIntegral);
+            displayResult(approximatedIntegral.toString());
         });
     }
-    function presentIntegralValue(integralValue) {
+    /**
+     * Display that bad boi
+     * @param integralValue - string representation of the answer
+     */
+    function displayResult(integralValue) {
+        let divWithResult = document.createElement("div");
+        divWithResult.textContent = integralValue;
+        id("log").prepend(divWithResult);
     }
     function computeFunction(mathFunction, x) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -82,6 +93,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             let currChar = mathFunction.charAt(i);
             if (currChar === "x" || currChar == "X") {
                 finalExpression = finalExpression.concat(x.toString());
+            }
+            else if (currChar === " ") {
+                finalExpression = finalExpression.concat("%20");
             }
             else {
                 finalExpression = finalExpression.concat(currChar);

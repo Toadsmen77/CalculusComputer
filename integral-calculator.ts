@@ -11,8 +11,10 @@
    * calculator is clicked. If so, it initiates the
    * actual computer functions
    */
-  function init() {
+  async function init() {
     let integrateButton = id("integrate-button");
+    let outputValue: number = await computeFunction("x^2+sin(x)", 2);
+    console.log("ye: " + outputValue);
     //integrateButton.addEventListener("click", computeIntegral);
   }
 
@@ -36,7 +38,7 @@
     let deltaX:number = (rightBound - leftBound) / N;
     let x:number = leftBound;
 
-    let approximatedIntegral:number = 0;
+    let approximatedIntegral: number = 0;
     let outputValue: number = await computeFunction(mathFunction, x);
 
     for (let i = 1; i < N - 2; i++) {
@@ -58,14 +60,18 @@
       approximatedIntegral *= -1;
     }
 
-    console.log("final: " + approximatedIntegral);
+    displayResult(approximatedIntegral.toString());
 
   }
 
-  function presentIntegralValue(integralValue: string) {
-
-
-
+  /**
+   * Display that bad boi
+   * @param integralValue - string representation of the answer
+   */
+  function displayResult(integralValue: string) {
+    let divWithResult = document.createElement("div");
+    divWithResult.textContent = integralValue;
+    id("log").prepend(divWithResult);
   }
 
   async function computeFunction(mathFunction: string, x: number): Promise<number> {
@@ -96,6 +102,8 @@
       let currChar: string = mathFunction.charAt(i);
       if (currChar === "x" || currChar == "X") {
         finalExpression = finalExpression.concat(x.toString());
+      } else if (currChar === " ") {
+        finalExpression = finalExpression.concat("%20");
       } else {
         finalExpression = finalExpression.concat(currChar);
       }
