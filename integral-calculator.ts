@@ -1,5 +1,5 @@
 
-
+// tsc -p tsconfig.json <- transpile TS to JS
 "use strict";
 
 (function() {
@@ -13,9 +13,7 @@
    */
   async function init() {
     let integrateButton = id("integrate-button");
-    let outputValue: number = await computeFunction("x^2+sin(x)", 2);
-    console.log("ye: " + outputValue);
-    //integrateButton.addEventListener("click", computeIntegral);
+    integrateButton.addEventListener("click", computeIntegral);
   }
 
   /**
@@ -24,7 +22,7 @@
    */
   async function computeIntegral() {
 
-    const N:number = 5;
+    const N:number = 20;
     let mathFunction = id("expression").value;
     let leftBound: number = parseInt(id("left-bound").value);
     let rightBound: number = parseInt(id("right-bound").value);
@@ -35,13 +33,15 @@
       negativeIntegral = true;
     }
 
-    let deltaX:number = (rightBound - leftBound) / N;
-    let x:number = leftBound;
+    let deltaX: number = (rightBound - leftBound) / N;
+    let x: number = leftBound;
 
     let approximatedIntegral: number = 0;
     let outputValue: number = await computeFunction(mathFunction, x);
+    approximatedIntegral += outputValue;
+    x += deltaX;
 
-    for (let i = 1; i < N - 2; i++) {
+    for (let i = 1; i < N; i++) {
       let indexIsOdd:boolean = i % 2 == 1;
       outputValue = await computeFunction(mathFunction, x);
       if (indexIsOdd) {
@@ -60,18 +60,24 @@
       approximatedIntegral *= -1;
     }
 
-    displayResult(approximatedIntegral.toString());
+    displayResult(mathFunction, approximatedIntegral.toString());
 
+    console.log(approximatedIntegral);
   }
 
   /**
    * Display that bad boi
+   * @param integral - string represenation of original integral input
    * @param integralValue - string representation of the answer
    */
-  function displayResult(integralValue: string) {
-    let divWithResult = document.createElement("div");
-    divWithResult.textContent = integralValue;
-    id("log").prepend(divWithResult);
+  function displayResult(integral: string, integralValue: string) {
+    let divWithResult: HTMLElement = document.createElement("div");
+    let leftBound: string = id("left-bound").textContent;
+    let rightBound: string = id("right-bound").textContent;
+    divWithResult.textContent = integral + "; " + leftBound + " -> " + rightBound
+    + " = " + integralValue;
+    console.log(divWithResult.textContent);
+    id("integrals").appendChild(divWithResult);
   }
 
   async function computeFunction(mathFunction: string, x: number): Promise<number> {
@@ -79,15 +85,12 @@
     const URL: string = "http://api.mathjs.org/v4/?expr=";
     // replace all instances of x in the function with the number,
     // then just compute the expression by calling the mathjs API
-    let expressionPluggedIn: string = plugInX(mathFunction, x);
+    let expressionPluggedIn: string = encodeURIComponent(plugInX(mathFunction, x));
 
     // form of API call: http://api.mathjs.org/v4/?expr=2*(7-3)
     let promiseOutput = await fetch(URL + expressionPluggedIn);
-
     let output = await promiseOutput.text();
-
     return parseInt(output);
-
   }
 
   /**
@@ -102,8 +105,6 @@
       let currChar: string = mathFunction.charAt(i);
       if (currChar === "x" || currChar == "X") {
         finalExpression = finalExpression.concat(x.toString());
-      } else if (currChar === " ") {
-        finalExpression = finalExpression.concat("%20");
       } else {
         finalExpression = finalExpression.concat(currChar);
       }
@@ -117,8 +118,18 @@
    * html element id that the function caller wants to get
    * @returns DOM/HTML element specified by "elementID"
    */
-   function id(elementID: string) {
+  function id(elementID: string): HTMLInputElement {
     return <HTMLInputElement>document.getElementById(elementID);
+  }
+
+  /**
+   * Returns the DOM/HTML element which the caller of
+   * this function wants
+   * @param {String} selector - tag selector
+   * @returns {Element} - DOM element that caller wants
+   */
+  function qs(selector: string): HTMLInputElement {
+    return document.querySelector(selector);
   }
 
 })();

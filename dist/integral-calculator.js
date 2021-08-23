@@ -1,3 +1,4 @@
+// tsc -p tsconfig.json <- transpile TS to JS
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -18,9 +19,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     function init() {
         return __awaiter(this, void 0, void 0, function* () {
             let integrateButton = id("integrate-button");
-            let outputValue = yield computeFunction("x^2+sin(x)", 2);
-            console.log("ye: " + outputValue);
-            //integrateButton.addEventListener("click", computeIntegral);
+            integrateButton.addEventListener("click", computeIntegral);
         });
     }
     /**
@@ -29,7 +28,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
      */
     function computeIntegral() {
         return __awaiter(this, void 0, void 0, function* () {
-            const N = 5;
+            const N = 20;
             let mathFunction = id("expression").value;
             let leftBound = parseInt(id("left-bound").value);
             let rightBound = parseInt(id("right-bound").value);
@@ -42,7 +41,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             let x = leftBound;
             let approximatedIntegral = 0;
             let outputValue = yield computeFunction(mathFunction, x);
-            for (let i = 1; i < N - 2; i++) {
+            approximatedIntegral += outputValue;
+            x += deltaX;
+            for (let i = 1; i < N; i++) {
                 let indexIsOdd = i % 2 == 1;
                 outputValue = yield computeFunction(mathFunction, x);
                 if (indexIsOdd) {
@@ -59,24 +60,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             if (negativeIntegral) {
                 approximatedIntegral *= -1;
             }
-            displayResult(approximatedIntegral.toString());
+            displayResult(mathFunction, approximatedIntegral.toString());
+            console.log(approximatedIntegral);
         });
     }
     /**
      * Display that bad boi
+     * @param integral - string represenation of original integral input
      * @param integralValue - string representation of the answer
      */
-    function displayResult(integralValue) {
+    function displayResult(integral, integralValue) {
         let divWithResult = document.createElement("div");
-        divWithResult.textContent = integralValue;
-        id("log").prepend(divWithResult);
+        let leftBound = id("left-bound").textContent;
+        let rightBound = id("right-bound").textContent;
+        divWithResult.textContent = integral + "; " + leftBound + " -> " + rightBound
+            + " = " + integralValue;
+        console.log(divWithResult.textContent);
+        id("integrals").appendChild(divWithResult);
     }
     function computeFunction(mathFunction, x) {
         return __awaiter(this, void 0, void 0, function* () {
             const URL = "http://api.mathjs.org/v4/?expr=";
             // replace all instances of x in the function with the number,
             // then just compute the expression by calling the mathjs API
-            let expressionPluggedIn = plugInX(mathFunction, x);
+            let expressionPluggedIn = encodeURIComponent(plugInX(mathFunction, x));
             // form of API call: http://api.mathjs.org/v4/?expr=2*(7-3)
             let promiseOutput = yield fetch(URL + expressionPluggedIn);
             let output = yield promiseOutput.text();
@@ -94,9 +101,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
             if (currChar === "x" || currChar == "X") {
                 finalExpression = finalExpression.concat(x.toString());
             }
-            else if (currChar === " ") {
-                finalExpression = finalExpression.concat("%20");
-            }
             else {
                 finalExpression = finalExpression.concat(currChar);
             }
@@ -110,6 +114,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
      */
     function id(elementID) {
         return document.getElementById(elementID);
+    }
+    /**
+     * Returns the DOM/HTML element which the caller of
+     * this function wants
+     * @param {String} selector - tag selector
+     * @returns {Element} - DOM element that caller wants
+     */
+    function qs(selector) {
+        return document.querySelector(selector);
     }
 })();
 //# sourceMappingURL=integral-calculator.js.map

@@ -20,6 +20,12 @@ hr {
   border-radius: 10px;
 }
 
+#integrals {
+  background-color: darkred;
+  padding-bottom: 320px;
+  border-radius: 10px;
+}
+
 #derivative-pics {
   display: inline;
   padding-top: 125px;
