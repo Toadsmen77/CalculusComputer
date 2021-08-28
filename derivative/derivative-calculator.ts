@@ -1,4 +1,6 @@
 
+import { PostFixExpression } from "./PostFixExpression";
+import { ExpressionTree } from "./ExpressionTree";
 "use strict";
 
 /**
@@ -30,8 +32,10 @@
   function computeExpression() {
     let infixExpression = id("expression").value;
     let postFixExpression = new PostFixExpression(infixExpression);
-    let expressionTree = new ExpressionTree(postFixExpression);
-    let derivative = expressionTree.differentiateTree();
+    console.log("post fix: " + postFixExpression.postFixExpressionAsArray);
+    let expressionTree = new ExpressionTree(postFixExpression.postFixExpressionAsArray);
+    expressionTree.print();
+    let derivative: string = expressionTree.differentiateTree();
     displayResult(derivative);
   }
 
@@ -41,7 +45,7 @@
    * @param {String} derivative - holds the derivative
    * of the origin function that the user input
    */
-  function displayResult(derivative) {
+  function displayResult(derivative: string) {
     let derivativeElement = document.createElement("div");
     derivativeElement.textContent = derivative;
     let log = id("derivatives");
@@ -53,7 +57,7 @@
    * html element id that the function caller wants to get
    * @returns DOM/HTML element specified by "elementID"
    */
-  function id(elementID) {
+  function id(elementID: string) {
     return <HTMLInputElement>document.getElementById(elementID);
   }
 

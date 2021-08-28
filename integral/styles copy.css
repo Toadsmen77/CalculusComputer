@@ -1,0 +1,47 @@
+/*
+  *** TODO: fill in your header ***
+  Juda Fernandez
+  4/7/21
+  Section AM - Fadel
+
+  This CSS file sets designs for my entire webpage. It doesn't
+  include styling that is specific to a single webpage;
+  instead, it deals with styling that is constant throughout
+  the website(all the webpages).
+
+*/
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url("images/math-image.jpg");
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  width: 80%;
+  opacity: 0.9;
+}
+
+header, section {
+  text-align: left;
+  background-color: goldenrod;
+  border-radius: 10px;
+}
+
+section {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: 10px;
+}
+
+dt {
+  text-decoration: underline;
+}
+
+#pythagorean-theorem-label {
+  font-weight: bold;
+  font-size: small;
+}
+
+aside {
+  font-size: 90%;
+}
