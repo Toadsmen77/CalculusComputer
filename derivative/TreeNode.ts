@@ -1,7 +1,8 @@
 export { TreeNode }
 /**
  * Class/blueprint for nodes of our expression tree
- * All nodes hold String data types
+ * All nodes hold String data which represent operators
+ * and operands of math expressions
  */
 class TreeNode {
   item: string;
