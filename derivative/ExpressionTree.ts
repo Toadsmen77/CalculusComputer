@@ -14,10 +14,14 @@ class ExpressionTree {
     this.convertStringToTree(expression);
   }
 
+  /**
+  * Takes an array representation of a post fix math expression and constructs
+  * a binary expression tree out of it.
+  * @param {Array<string>} expression - post fix expression represented as an array of strings
+  */
   convertStringToTree(expression: Array<string>) {
 
     let stack: Array<TreeNode> = [];
-
     for (let i = 0; i < expression.length; i++) {
 
       // create a new tree node of the current item
@@ -42,16 +46,18 @@ class ExpressionTree {
 
   }
 
+  /**
+  * Differentiates the tree by applying a recursive DFS algorithm and determining what 
+  * actions to take / differentiation rule to apply based on what operator the 
+  * current node is. 
+  * @returns {string} - return the derivative of the tree as a string
+  */
   differentiateTree(): string {
 
     // IF    Info(Ptr) == V
-
     // THEN  Diff <-- 1    /* Rule-2 */
-
     // ELSE  IF    Info(Ptr) == a constant OR Info(Ptr) == a different variable
-
     // THEN  Diff <-- 0   /* Rule-1 */
-
     // ELSE
     //      CASE Info(Ptr) OF
     //  '+': apply Rule-3 ;
@@ -65,12 +71,12 @@ class ExpressionTree {
 
   }
 
+  // helper function of the function above
   differentiateTreeDFS(node:TreeNode): string {
 
     if (node === null) {
       return "";
     } else {
-
       let item:string = node.item;
       if (this.isOperand(item)) { // is a number
         if (item === "X" || item === "x") {
@@ -110,6 +116,12 @@ class ExpressionTree {
 
   }
 
+  /**
+  * constructs the math expression using the given tree by
+  * applying a recursive DFS algorithm
+  * @returns {string} - returns a string representing the math expression
+  * that the input tree represents
+  */
   getExpressionFromTree(node:TreeNode):string {
     if (node === null) {
       return "";
