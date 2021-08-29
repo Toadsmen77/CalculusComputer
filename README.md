@@ -7,6 +7,16 @@ online(such as Wolfram Alpha) and I was really fascinated by them, so I wanted t
 <p><a href="https://youtu.be/P9dpTTpjymE">A good song</a></p>
 Computer for derivatives of single variable mathematical functions.
 <i>♫ It's as easy as can be, just have to take dx/dt, I will derive, I will deriiiive! ♫ </i>
+<p>Note: this derivative finder is currently only capable of handling math expressions consisting of the following operators:
++,-,*,/,^,(,)
+</p>
+<header>Some potential improvements to implement later:</header>
+<ul>
+  <li>Handling implicit multiplication. Ex: 5x -> 5 * x</li>
+  <li>Error checking</li>
+  <li>Chain rule</li>
+  <li>Multivariable functions</li>
+</ul>
 
 <h2>Integral Calculator</h2>
 My integral calculator uses numerical integration(<a href="https://en.wikipedia.org/wiki/Simpson%27s_rule">Simpson's rule</a>)
