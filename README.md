@@ -8,9 +8,9 @@ online(such as Wolfram Alpha) and I was really fascinated by them, so I wanted t
 Computer for derivatives of single variable mathematical functions.
 <i>♫ It's as easy as can be, just have to take dx/dt, I will derive, I will deriiiive! ♫ </i>
 <p>Note: this derivative finder is currently only capable of handling math expressions consisting of the following operators:
-+,-,*,/,^,(,)
-</p>
++, -, *, /, ^, (, )
 <header>Some potential improvements to implement later:</header>
+</p>
 <ul>
   <li>Handling implicit multiplication. Ex: 5x -> 5 * x</li>
   <li>Error checking</li>
